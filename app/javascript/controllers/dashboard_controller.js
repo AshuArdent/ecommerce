@@ -8,7 +8,7 @@ export default class extends Controller {
   static values = { revenue: Array }
 
   initialize() {
-    const data = this.revenueValue.map((item) => item[1] / 100.0)
+    const data = this.revenueValue.map((item) => item[1])
     const labels = this.revenueValue.map((item) => item[0])
 
     const ctx = document.getElementById('revenueChart')
@@ -18,7 +18,7 @@ export default class extends Controller {
       data: {
         labels: labels,
         datasets: [{
-          label: 'Revenue $',
+          label: 'Revenue INR',
           data: data,
           borderWidth: 3,
           fill: true
